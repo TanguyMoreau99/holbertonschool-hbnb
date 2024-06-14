@@ -156,3 +156,6 @@ sudo docker run -p 8000:8000 holbertonschool-hbnb
 - Catherine Jiguet [Jiguet-c](https://github.com/Jiguet-C)
 - Tanguy Moreau [TanguyMoreau99](https://github.com/TanguyMoreau99)
 - Louis Saint Machin [LouisXV16](https://github.com/LouisXV16)
+
+### License
+This project is licensed under the MIT License.
