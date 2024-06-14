@@ -8,6 +8,7 @@ HBnB Evolution is a simplified clone of AirBnB, developed using Python and Flask
 - [Project Structure](#project-structure)
 - [UML Diagram](#uml-diagram)
 - [Installation](#installation)
+- [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Testing](#testing)
 - [Dockerization](#dockerization)
@@ -76,6 +77,14 @@ source venv/bin/activate
 ```
 pip install -r requirements.txt
 ```
+## Usage
+
+1. Start the Flask application:
+```
+flask run
+
+```
+2. The API will be available at http://127.0.0.1:5000.
 
 ## API Endpoints
 
