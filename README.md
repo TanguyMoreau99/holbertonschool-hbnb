@@ -8,7 +8,6 @@ HBnB Evolution is a simplified clone of AirBnB, developed using Python and Flask
 - [Project Structure](#project-structure)
 - [UML Diagram](#uml-diagram)
 - [Installation](#installation)
-- [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Testing](#testing)
 - [Dockerization](#dockerization)
