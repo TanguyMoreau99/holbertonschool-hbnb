@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# NS for managing places
+"""API for managing places"""
 
 from flask import request
 from flask_restx import Namespace, Resource, fields
@@ -10,7 +10,7 @@ from datetime import datetime
 ns = Namespace('places', description='Operations related to places')
 data_manager = DataManager()
 
-# Model definition for a Place
+"""Model definition for a Place"""
 place_model = ns.model('Place', {
     'id': fields.String(
         required=True,

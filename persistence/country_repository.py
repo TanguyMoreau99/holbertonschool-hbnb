@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Persistence for countries"""
+"""Persistence for countries"""
 
 from model.country import Country
 from persistence.ipersistence_manager import IPersistenceManager

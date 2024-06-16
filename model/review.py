@@ -9,14 +9,13 @@ class Review:
     """Class representing a review."""
 
     def __init__(self, user_id, place_id, rating, comment):
-        # Generate a UUID4 for unique identification
         self.review_id = str(uuid.uuid4())
         self.user_id = user_id
         self.place_id = place_id
         self.rating = rating
         self.comment = comment
-        self.created_at = datetime.now()  # Record creation timestamp
-        self.updated_at = datetime.now()  # Record update timestamp
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
 
     def to_dict(self):
         """Returns the review data as a dictionary."""

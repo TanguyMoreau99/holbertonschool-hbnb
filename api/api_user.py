@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# API for managing users
+"""API for managing users"""
 
 from flask import request
 from flask_restx import Namespace, Resource, fields
@@ -10,7 +10,7 @@ from datetime import datetime
 ns = Namespace('users', description='Operations related to users')
 data_manager = DataManager()
 
-# Model definition for a User
+"""Model definition for a User"""
 user_model = ns.model('User', {
     'id': fields.String(
         required=True,

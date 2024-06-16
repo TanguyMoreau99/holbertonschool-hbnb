@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# API for managing cities
+"""API for managing cities"""
 
 from flask import request
 from flask_restx import Namespace, Resource, fields
@@ -10,7 +10,7 @@ from datetime import datetime
 ns = Namespace('cities', description='Operations related to cities')
 data_manager = DataManager()
 
-# Model definition for a City
+"""Model definition for a City"""
 city_model = ns.model('City', {
     'id': fields.String(required=True, description='City ID'),
     'name': fields.String(required=True, description='City name'),

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Persistence for reviews
+"""Persistence for reviews"""
 
 from model.review import Review
 from persistence.ipersistence_manager import IPersistenceManager

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Persistence Interface
+"""Persistence Interface"""
 
 from abc import ABC, abstractmethod
 

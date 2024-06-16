@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 
 import unittest
-from model.place import Place  # Assure-toi d'importer correctement la classe Place
+from model.place import Place
 
 class TestPlace(unittest.TestCase):
 
     def setUp(self):
-        # Créer une instance de Place pour une utilisation dans les tests
         self.place = Place(
             name="Cosy Apartment",
             description="A comfortable apartment in the city center.",
@@ -23,7 +22,6 @@ class TestPlace(unittest.TestCase):
         )
 
     def test_creation_place(self):
-        # Vérifier que le place a été créé avec les attributs corrects
         self.assertEqual(self.place.name, "Cosy Apartment")
         self.assertEqual(self.place.description, "A comfortable apartment in the city center.")
         self.assertEqual(self.place.address, "123 Main St")
@@ -39,22 +37,17 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(self.place.reviews, [])
 
     def test_add_review(self):
-        # Ajouter une critique et vérifier qu'elle est correctement ajoutée à la liste des critiques
         review = "Great place to stay!"
         self.place.add_review(review)
         self.assertIn(review, self.place.reviews)
 
     def test_calculate_total_price(self):
-        # Vérifier que le calcul du prix total est correct pour un nombre de nuits donné
         total_price = self.place.calculate_total_price(3)
         self.assertEqual(total_price, 300)
 
     def test_list_amenities(self):
-        # Vérifier que la liste des commodités est correctement renvoyée
         amenities = self.place.list_amenities()
         self.assertEqual(amenities, ["wifi", "kitchen"])
-
-    # Tu peux ajouter d'autres tests pour les autres méthodes de la classe Place ici...
 
 if __name__ == '__main__':
     unittest.main()

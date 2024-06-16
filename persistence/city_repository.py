@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Persistence for cities
+"""Persistence for cities"""
 
 import uuid
 from model.city import City

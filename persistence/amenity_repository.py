@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Persistence for amenities
+"""Persistence for amenities"""
 
 import uuid
 from model.amenity import Amenity

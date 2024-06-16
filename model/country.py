@@ -8,11 +8,10 @@ from datetime import datetime
 class Country:
     """Class representing a country."""
     def __init__(self, name):
-        # Generate a UUID4 for unique identification
         self.name = name
         self.country_id = str(uuid.uuid4())
-        self.created_at = datetime.now()  # Record creation timestamp
-        self.updated_at = datetime.now()  # Record update timestamp
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
 
     def to_dict(self):
         """Returns the country data as a dictionary."""

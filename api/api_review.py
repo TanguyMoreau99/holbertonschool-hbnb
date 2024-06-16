@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# API for managing reviews
+"""API for managing reviews"""
 
 from flask import request
 from flask_restx import Namespace, Resource, fields
@@ -10,7 +10,7 @@ from datetime import datetime
 ns = Namespace('reviews', description='Operations related to reviews')
 data_manager = DataManager()
 
-# Model definition for a Review
+"""Model definition for a Review"""
 review_model = ns.model('Review', {
     'id': fields.String(
         required=True,

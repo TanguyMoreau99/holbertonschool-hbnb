@@ -8,14 +8,13 @@ from datetime import datetime
 class User:
     """Class representing a user."""
     def __init__(self, username, email, password):
-        # Generate a UUID4 for unique identification
         self.user_id = str(uuid.uuid4())
         self.username = username
         self.email = email
         # In a real-world scenario, hash the password before storing it
         self.password = password
-        self.created_at = datetime.now()  # Record creation timestamp
-        self.updated_at = datetime.now()  # Record update timestamp
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
         self.reviews = []
 
     def add_review(self, review):

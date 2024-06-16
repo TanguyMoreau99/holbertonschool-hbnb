@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# API for managing countries
+"""API for managing countries"""
 
 from flask import request
 from flask_restx import Namespace, Resource, fields
@@ -10,7 +10,7 @@ from datetime import datetime
 ns = Namespace('countries', description='Operations related to countries')
 data_manager = DataManager()
 
-# Model definition for a Country
+"""Model definition for a Country"""
 country_model = ns.model('Country', {
     'id': fields.String(
         required=True,
