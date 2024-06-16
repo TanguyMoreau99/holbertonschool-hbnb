@@ -1,34 +1,31 @@
 #!/usr/bin/python3
 import unittest
-from model.amenity import Amenity  # Assure-toi d'importer correctement la classe Amenity
+from model.amenity import Amenity
 import uuid
 from datetime import datetime
 
 class TestAmenity(unittest.TestCase):
 
     def test_creation_amenity(self):
-        # Créer une instance valide d'Amenity
         amenity_name = "Swimming Pool"
         amenity = Amenity(amenity_name)
 
-        # Vérifier si l'instance a été créée avec les attributs corrects
         self.assertEqual(amenity.name, amenity_name)
 
-        # Vérifier si l'ID d'amenity est une chaîne UUID valide
         self.assertTrue(uuid.UUID(amenity.amenity_id))
 
-        # Vérifier si les horodatages de création et de mise à jour sont définis
         self.assertIsInstance(amenity.created_at, datetime)
         self.assertIsInstance(amenity.updated_at, datetime)
 
-    def test_to_dict(self):
-        # Créer une instance d'Amenity
-        amenity = Amenity("Gym")
+def test_to_dict(self):
+        amenity = Amenity()
+        amenity.amenity_id = 'db8e1524-2ebf-4b71-9212-e372623907bc'
+        amenity.name = 'Gym'
+        amenity.created_at = datetime.datetime(2024, 6, 16, 11, 3, 23, 883774)
+        amenity.updated_at = datetime.datetime(2024, 6, 16, 11, 3, 23, 883775)
 
-        # Appeler la méthode to_dict
         amenity_dict = amenity.to_dict()
 
-        # Vérifier si la méthode to_dict renvoie un dictionnaire avec les clés et les valeurs correctes
         self.assertIsInstance(amenity_dict, dict)
         self.assertIn('amenity_id', amenity_dict)
         self.assertIn('name', amenity_dict)

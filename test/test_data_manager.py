@@ -1,9 +1,9 @@
+#!/usr/bin/python3
 import unittest
 from unittest.mock import patch, MagicMock
 import sys
 import os
 
-# Assurez-vous que le répertoire parent est dans le chemin d'importation
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from model.amenity import Amenity
@@ -153,7 +153,7 @@ class TestDataManager(unittest.TestCase):
 
     @patch.object(DataManager, 'get_place')
     def test_get_place(self, mock_get_place):
-        mock_place = Place(name='Eiffel Tower')
+        mock_place = Place(name='Eiffel Tower', description='', address='', city_id='', latitude=0.0, longitude=0.0, host_id='', number_of_rooms=1, number_of_bathrooms=1, price_per_night=100, max_guests=2, amenity_ids=[])
         mock_get_place.return_value = mock_place
         result = self.data_manager.get_place(1)
         self.assertEqual(result.name, 'Eiffel Tower')
@@ -161,7 +161,10 @@ class TestDataManager(unittest.TestCase):
 
     @patch.object(DataManager, 'get_all_places')
     def test_get_all_places(self, mock_get_all_places):
-        mock_places = [Place(name='Eiffel Tower'), Place(name='Louvre')]
+        mock_places = [
+            Place(name='Eiffel Tower', description='', address='', city_id='', latitude=0.0, longitude=0.0, host_id='', number_of_rooms=1, number_of_bathrooms=1, price_per_night=100, max_guests=2, amenity_ids=[]),
+            Place(name='Louvre', description='', address='', city_id='', latitude=0.0, longitude=0.0, host_id='', number_of_rooms=1, number_of_bathrooms=1, price_per_night=100, max_guests=2, amenity_ids=[])
+        ]
         mock_get_all_places.return_value = mock_places
         result = self.data_manager.get_all_places()
         self.assertEqual(len(result), 2)
@@ -195,10 +198,11 @@ class TestDataManager(unittest.TestCase):
 
     @patch.object(DataManager, 'get_review')
     def test_get_review(self, mock_get_review):
-        mock_review = Review(comment='Great place!')
+        mock_review = Review(comment='Great place!', user_id='', place_id='', rating=5)
         mock_get_review.return_value = mock_review
         result = self.data_manager.get_review(1)
         self.assertEqual(result.comment, 'Great place!')
         mock_get_review.assert_called_once_with(1)
 
-    @patch.object(DataManager, 'get_all
+if __name__ == '__main__':
+    unittest.main()
