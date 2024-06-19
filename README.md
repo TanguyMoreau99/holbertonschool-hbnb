@@ -131,7 +131,7 @@ flask run
 
 To run the unit tests, use the following command:
 ```
-python -m unittest discover -s test
+python3 -m unittest discover -s test
 
 ```
 
